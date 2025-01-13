@@ -1,127 +1,89 @@
-Proyecto Escuela
+# Proyecto Escuela
 
-Este repositorio contiene el código fuente y la documentación de un sistema cliente-servidor desarrollado en Java, enfocado en la gestión de actividades extracurriculares para estudiantes universitarios. El proyecto utiliza sockets para la comunicación bidireccional entre cliente y servidor y proporciona una interfaz gráfica amigable creada con Swing.
+Este proyecto es una aplicación desarrollada en Java que implementa un sistema de gestión para solicitudes escolares. Incluye componentes cliente-servidor y formularios interactivos para los usuarios.
 
-Descripción del Proyecto
+## Características principales
 
-El sistema está diseñado para resolver los problemas de ineficiencia en la asignación de horarios de actividades extracurriculares, como talleres y deportes, en una universidad. Los estudiantes pueden enviar solicitudes desde una aplicación cliente, que son procesadas por el servidor para asignar horarios de manera eficiente.
+- **Formulario de Cliente Estudiante**: Permite a los estudiantes realizar solicitudes al sistema.
+- **Formulario de Servidor Escuela**: Gestiona las solicitudes recibidas desde el lado del servidor.
+- **Interfaz gráfica**: Diseñada con formularios para facilitar la interacción.
+- **Estructura cliente-servidor**: Implementa comunicación entre los formularios cliente y servidor.
 
-Características Principales
+## Requisitos del sistema
 
-Modelo Cliente-Servidor:
+- **Java Development Kit (JDK)**: Versión 8 o superior.
+- **NetBeans IDE**: Para abrir y ejecutar el proyecto (opcional).
+- **Apache Ant**: Para construir el proyecto.
 
-El servidor administra las solicitudes de los estudiantes y asigna horarios.
+## Estructura del proyecto
 
-El cliente permite a los estudiantes registrar sus preferencias.
-
-Comunición con Sockets:
-
-Implementación de flujos de entrada y salida para transmitir datos entre cliente y servidor.
-
-Serialización de objetos para enviar información estructurada.
-
-Interfaces Gráficas (GUI):
-
-Diseño de formularios para cliente y servidor utilizando Swing.
-
-Concurrencia:
-
-Manejo de hilos para garantizar la comunicación asíncrona y eficiente entre cliente y servidor.
-
-Validaciones:
-
-Verificación de datos antes del envío de solicitudes.
-
-Estructura del Proyecto
-
+```
 ProyectoEscuela/
-|-- src/
-|   |-- proyectoescuela/
-|       |-- FormularioClienteEstudiante.java
-|       |-- FormularioServidorEscuela.java
-|       |-- ProyectoEscuela.java
-|       |-- SolicitudEstudiante.java
-|-- build/
-|-- dist/
-|   |-- ProyectoEscuela.jar
-|-- .vscode/
-|-- nbproject/
-|-- solicitud_estudiante.txt
-|-- README.md
+├── build/                # Archivos compilados (generados automáticamente)
+├── build.xml             # Script de construcción de Apache Ant
+├── dist/                 # Artefactos distribuidos, como archivos JAR
+├── nbproject/            # Configuración específica de NetBeans
+├── src/                  # Código fuente del proyecto
+│   └── proyectoescuela/
+│       ├── FormularioClienteEstudiante.form
+│       ├── FormularioClienteEstudiante.java
+│       ├── FormularioServidorEscuela.form
+│       ├── FormularioServidorEscuela.java
+│       ├── ProyectoEscuela.java
+│       └── SolicitudEstudiante.java
+└── test/                 # Archivos para pruebas
+```
 
-src/: Contiene los archivos fuente del proyecto.
+## Instalación y configuración
 
-dist/: Incluye el archivo ejecutable ProyectoEscuela.jar.
+1. **Clonar el repositorio**:
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd ProyectoEscuela
+   ```
 
-.vscode/ y nbproject/: Configuraciones del entorno de desarrollo.
+2. **Abrir el proyecto en NetBeans** (opcional):
+   - Desde NetBeans, selecciona `File > Open Project` y selecciona la carpeta `ProyectoEscuela`.
 
-Requisitos
+3. **Construir el proyecto con Ant**:
+   ```bash
+   ant clean
+   ant jar
+   ```
 
-Java Development Kit (JDK) 8 o superior.
+4. **Ejecutar el archivo JAR generado**:
+   ```bash
+   java -jar dist/ProyectoEscuela.jar
+   ```
 
-IDE compatible con proyectos Java (NetBeans recomendado).
+## Uso
 
-Conexión a la misma red para probar cliente y servidor.
+### Cliente
+- Abre el formulario de cliente (`FormularioClienteEstudiante`) para realizar solicitudes.
 
-Instrucciones de Ejecución
+### Servidor
+- Usa el formulario de servidor (`FormularioServidorEscuela`) para gestionar solicitudes recibidas.
 
-Compilación:
+## Contribuciones
 
-Abrir el proyecto en NetBeans o cualquier IDE compatible.
+1. Realiza un fork del repositorio.
+2. Crea una rama para tus cambios:
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
+   ```
+3. Realiza un commit de tus cambios:
+   ```bash
+   git commit -m "Agrega nueva funcionalidad"
+   ```
+4. Sube los cambios a tu rama:
+   ```bash
+   git push origin feature/nueva-funcionalidad
+   ```
+5. Abre un Pull Request en GitHub.
 
-Compilar los archivos fuente en el directorio src/.
+## Licencia
 
-Ejecución del Servidor:
-
-Ejecutar el archivo FormularioServidorEscuela.
-
-El servidor estará disponible en el puerto configurado (por defecto, 5000).
-
-Ejecución del Cliente:
-
-Ejecutar el archivo FormularioClienteEstudiante.
-
-Conectar al servidor usando la IP y puerto configurados.
-
-Interacción:
-
-Registrar una solicitud en el cliente y enviarla al servidor.
-
-El servidor procesará la solicitud y enviará una respuesta al cliente.
-
-Tecnologías Utilizadas
-
-Lenguaje de Programación: Java
-
-Frameworks: Swing para la interfaz gráfica
-
-Modelo Cliente-Servidor: Sockets
-
-Contribución
-
-Las contribuciones son bienvenidas. Para contribuir:
-
-Realiza un fork del repositorio.
-
-Crea una rama para tu función (‘feature/nueva-funcion’).
-
-Realiza los cambios necesarios y haz un commit.
-
-Envía un pull request.
-
-Autores
-
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+## Autor
 Sergio Meneses Hernández
-
-Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más información.
-
-Referencias
-
-Oracle. Documentación oficial de clases y sockets en Java.
-
-Joyanes, L. (2011). Programación en Java 6.
-
-Sánchez, J. (2004). Programación en red con Java.
 
